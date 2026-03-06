@@ -1,0 +1,14 @@
+services:
+  frontend-clima:
+    build:
+      context: ../frontend-clima
+      dockerfile: Dockerfile
+    container_name: frontend-clima
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - OWM_API_KEY=${OWM_API_KEY}
+      - OWM_BASE_URL=${OWM_BASE_URL}
+      - OWM_CITY=${OWM_CITY}
