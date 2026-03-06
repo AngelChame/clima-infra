@@ -3,6 +3,10 @@ services:
     build:
       context: ../frontend-clima
       dockerfile: Dockerfile
+      args:
+        - OWM_API_KEY=${OWM_API_KEY}
+        - OWM_BASE_URL=${OWM_BASE_URL}
+        - OWM_CITY=${OWM_CITY}
     container_name: frontend-clima
     restart: unless-stopped
     ports:
